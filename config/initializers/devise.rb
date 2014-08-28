@@ -230,19 +230,20 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :facebook, Rails.application.config.fb_appid, Rails.application.config.fb_app_secret, :scope => 'user_about_me, 
-  publish_stream, offline_access,publish_actions, email, create_event, 
-  rsvp_event, user_religion_politics, read_friendlists, friends_religion_politics', 
-  :display => 'popup', :iframe => true
+
+  # config.omniauth :facebook, Rails.application.config.fb_appid, Rails.application.config.fb_app_secret, :scope => 'user_about_me, 
+  # publish_stream, offline_access,publish_actions, email, create_event, 
+  # rsvp_event, user_religion_politics, read_friendlists, friends_religion_politics', 
+  # :display => 'popup', :iframe => true
   
-  config.omniauth :twitter, Rails.application.config.twitter_appid, Rails.application.config.twitter_app_secret
+  # config.omniauth :twitter, Rails.application.config.twitter_appid, Rails.application.config.twitter_app_secret
 
   #, :scope => 'user_about_me, 
   #publish_stream, offline_access,publish_actions, email, create_event, 
   #rsvp_event, user_religion_politics, read_friendlists, friends_religion_politics', 
   #:display => 'popup', :iframe => true
 
-  config.omniauth :linkedin, Rails.application.config.linkedin_appid, Rails.application.config.linkedin_app_secret, :scope =>'r_fullprofile r_emailaddress r_network'
+  #config.omniauth :linkedin, Rails.application.config.linkedin_appid, Rails.application.config.linkedin_app_secret, :scope =>'r_fullprofile r_emailaddress r_network'
   
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
