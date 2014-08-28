@@ -1,0 +1,34 @@
+<div  class="container span6">
+
+<%= nested_form_for @product ,:url => admin_products_path,html:{:class =>'form-horizontal',:id=>'login-form'} do |f|%>
+<fieldset>
+<div class="control-group">
+	<lebel>Name :</lebel>
+	<div class='control'>
+		<%= f.text_field :name , :class=>'span3'%>
+	</div>
+</div>
+<div class="control-group">
+	<lebel>Price :</lebel>
+	<div class='control'>
+		<%= f.text_field :price , :class=>'span3'%>
+	</div>
+</div>
+
+<div class="control-group">
+	<lebel>Variants :</lebel>
+	<div class='control'>
+		
+		<%= f.fields_for :variants do |builder|%>
+		Type : <%= builder.text_field :variation %>
+		
+		<% end %>
+	</div>
+	<p><%= f.link_to_add "Add a variant", :variants %></p>
+</div>
+
+</fieldset>
+<%= f.submit "Add User" , :class=>'btn btn-primary'%>
+<% end %>
+
+</div>

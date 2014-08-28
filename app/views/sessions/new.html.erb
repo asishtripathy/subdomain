@@ -1,0 +1,31 @@
+<div  class="container span6">
+
+<%= form_for @user,url:user_session_path ,html:{:class =>'form-horizontal',:id=>'login-form'} do |f|%>
+<fieldset>
+<div class="control-group">
+	<lebel>Email :</lebel>
+	<div class='control'>
+		<%= f.text_field :email , :class=>'span3'%>
+	</div>
+</div>
+<div class="control-group">
+	<lebel>Password :</lebel>
+	<div class='control'>
+		<%= f.password_field :password , :class=>'span3'%>
+	</div>
+</div>
+
+</fieldset>
+<%= f.submit "Sign in" , :class=>'btn btn-primary'%>
+<% end %>
+<%=link_to "Forget Password",'#',:class => 'btn'%>
+<%=link_to "Signup" , new_user_registration_path , :class => 'btn'%>
+<%= link_to('Connect with facebook', user_omniauth_authorize_path('facebook'), 
+:class => 'btn display-block float-right buzz-facebook-button') %>
+</div>
+<%= link_to('Connect with twitter', user_omniauth_authorize_path('twitter'), 
+:class => 'btn display-block float-right buzz-facebook-button') %>
+</div>
+<%= link_to('Connect with linkedin', user_omniauth_authorize_path('linkedin'), 
+:class => 'btn display-block float-right buzz-facebook-button') %>
+</div>

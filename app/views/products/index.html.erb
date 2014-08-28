@@ -1,0 +1,11 @@
+<% @products.each do |p|%>
+<div class='thumbnail'>
+	<span>
+	<%=p.name%>
+	</span>
+	<%=form_for p.cart_items.build , :remote => true do |f|%>
+	<%=f.hidden_field :product_id %>
+	<%=f.submit "Add To cart", :class => 'btn btn-primary' %>
+	<% end %>
+</div>
+<% end %>

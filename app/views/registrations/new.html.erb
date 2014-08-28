@@ -1,0 +1,33 @@
+<div  class="container">
+
+<%= form_for @user,url:user_registration_path ,html:{:class =>'form-horizontal',:id=>'login-form'} do |f|%>
+<fieldset>
+<div class="control-group">
+	<lebel>Name :</lebel>
+	<div class='control'>
+		<%= f.text_field :name , :class=>'span3'%>
+	</div>
+</div>
+<div class="control-group">
+	<lebel>Email :</lebel>
+	<div class='control'>
+		<%= f.text_field :email , :class=>'span3'%>
+	</div>
+</div>
+<div class="control-group">
+	<lebel>Password :</lebel>
+	<div class='control'>
+		<%= f.password_field :password , :class=>'span3'%>
+	</div>
+</div>
+<div class="control-group">
+	<lebel>Confirm Password :</lebel>
+	<div class='control'>
+		<%= f.password_field :password_confirmation , :class=>'span3'%>
+	</div>
+</div>
+</fieldset>
+<%= f.submit "Sign in" , :class=>'btn btn-primary'%>
+<% end %>
+
+</div>

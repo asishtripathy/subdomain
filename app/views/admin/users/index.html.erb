@@ -1,0 +1,33 @@
+<div class='breadcrumb'>
+	<span>Users</span>
+	<% if can? :update , @users %>
+			<%=link_to "New User",new_admin_user_path ,:class =>'btn btn-primary company-reg-link' %>
+	<% end %>
+	
+	
+</div>
+<table class='table table-striped'>
+	<thead>
+	<tr>
+		<th>Name</th>
+		<th>Company</th>
+		<th>Role</th>
+		<th>Options</th>
+	</tr>
+	</thead>
+	<tbody>
+	<% @users.each do |u|%>
+	<tr>
+		<td><%= u.name %></td>
+		<td><%= u.companies.first.nil? ? "-------" : u.companies.first.name%></td>
+		<td><%= u.user_role.nil? ?  "---------" : u.user_role %></td>
+		<td>
+			<% if can? :update , u %>
+			<%=link_to 'Edit',edit_admin_user_path(u), :class=>'btn' %>
+			<% end %>
+		</td>
+	</tr>
+	<% end %>
+	</tbody>
+</table>
+

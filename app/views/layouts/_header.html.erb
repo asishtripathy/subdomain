@@ -1,0 +1,22 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      
+      <a class="brand" href="#">Subdomain</a>
+      <div class="nav-collapse menu-links">
+        <ul class="nav nav-pills">
+          <% if user_signed_in? %>
+            <li><%= link_to "My Profle", "/path1"  %></li>
+            <li><%= link_to "Orders", "/path2"  %></li>
+            <li><%= link_to "Logout", destroy_user_session_path ,:method => :delete   %></li>
+          <% else user_signed_in? %>            
+            <li><%= link_to "About Us", "/path1"  %></li>
+            <li><%= link_to "Blog", "/path2"  %></li>
+            <li><%= link_to "My Cart", cart_items_path , :remote => true , 'data-toggle'=>"modal",'data-target'=>"#myModal"  %></li>
+            <li><%= link_to "Login", new_user_session_path  %></li>
+          <% end %>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>

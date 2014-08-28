@@ -1,0 +1,23 @@
+<div class='breadcrumb'>
+	<span><%=@company.name %></span>
+	<span class='company-reg-link'></span>
+</div>
+<ul class='thumbnails span9'>
+<% @company.products.each do |p| %>
+<li class="span3 company-list">
+
+	<div class="thumbnail">
+		<img alt="" src="/assets/product-deafault.jpeg">
+		<div class="caption">
+			<%#= link_to c.name, root_url(:subdomain => c.domain ) %>
+			<h5><%= link_to p.name,product_path(p) %></h5>
+			<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida ap eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+			<p>
+			<a class="btn btn-primary" href="#">Add To Cart</a>
+			
+			</p>
+		</div>
+	</div>
+</li>
+<% end %>
+</ul>

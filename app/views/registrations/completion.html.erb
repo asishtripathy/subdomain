@@ -1,0 +1,24 @@
+<div  class="container">
+
+<%= form_for @user_token,url:complete_signup_path ,html:{:class =>'form-horizontal',:id=>'login-form'}, :method=>'post' do |f|%>
+<fieldset>
+<%= f.hidden_field :id, :value=>@user_token.id , :class=>'span3'%>
+<%= fields_for :user ,@user_token.user do |u|%>
+<div class="control-group">
+	<lebel>Name :</lebel>
+	<div class='control'>
+		<%= u.text_field :name , :class=>'span3'%>
+	</div>
+</div>
+<div class="control-group">
+	<lebel>Email :</lebel>
+	<div class='control'>
+		<%= u.text_field :email , :class=>'span3'%>
+	</div>
+</div>
+<% end %>
+</fieldset>
+<%= f.submit "Sign in" , :class=>'btn btn-primary'%>
+<% end %>
+
+</div>
